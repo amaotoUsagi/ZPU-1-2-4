@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <CombatExtended.AmmoSetDef>
+        <defName>AmmoSet_145x114mm_Double</defName>
+        <label>14.5x114mm</label>
+        <ammoTypes>
+            <Ammo_145x114mm_FMJ>Bullet_145x114mm_FMJ_Double</Ammo_145x114mm_FMJ>
+            <Ammo_145x114mm_AP>Bullet_145x114mm_AP_Double</Ammo_145x114mm_AP>
+            <Ammo_145x114mm_Incendiary>Bullet_145x114mm_Incendiary_Double</Ammo_145x114mm_Incendiary>
+            <Ammo_145x114mm_HE>Bullet_145x114mm_HE_Double</Ammo_145x114mm_HE>
+            <Ammo_145x114mm_Sabot>Bullet_145x114mm_Sabot_Double</Ammo_145x114mm_Sabot>
+        </ammoTypes>
+        <similarTo>AmmoSet_AntiMateriel</similarTo>
+    </CombatExtended.AmmoSetDef>
+
+    <ThingDef ParentName="Base145x114mmBullet">
+        <defName>Bullet_145x114mm_FMJ_Double</defName>
+        <label>14.5x114mm bullet (FMJ)</label>
+        <projectile Class="CombatExtended.ProjectilePropertiesCE">
+            <damageAmountBase>53</damageAmountBase>
+            <armorPenetrationSharp>18</armorPenetrationSharp>
+            <armorPenetrationBlunt>634</armorPenetrationBlunt>
+            <pelletCount>2</pelletCount>
+            <spreadMult>6</spreadMult>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="Base145x114mmBullet">
+        <defName>Bullet_145x114mm_AP_Double</defName>
+        <label>14.5x114mm bullet (AP)</label>
+        <projectile Class="CombatExtended.ProjectilePropertiesCE">
+            <damageAmountBase>33</damageAmountBase>
+            <armorPenetrationSharp>36</armorPenetrationSharp>
+            <armorPenetrationBlunt>634</armorPenetrationBlunt>
+            <pelletCount>2</pelletCount>
+            <spreadMult>6</spreadMult>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="Base145x114mmBullet">
+        <defName>Bullet_145x114mm_Incendiary_Double</defName>
+        <label>14.5x114mm bullet (AP-I)</label>
+        <projectile Class="CombatExtended.ProjectilePropertiesCE">
+            <damageAmountBase>33</damageAmountBase>
+            <armorPenetrationSharp>36</armorPenetrationSharp>
+            <armorPenetrationBlunt>634</armorPenetrationBlunt>
+            <pelletCount>2</pelletCount>
+            <spreadMult>6</spreadMult>
+            <secondaryDamage>
+                <li>
+                    <def>Flame_Secondary</def>
+                    <amount>21</amount>
+                </li>
+            </secondaryDamage>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="Base145x114mmBullet">
+        <defName>Bullet_145x114mm_HE_Double</defName>
+        <label>14.5x114mm bullet (AP-HE)</label>
+        <projectile Class="CombatExtended.ProjectilePropertiesCE">
+            <damageAmountBase>53</damageAmountBase>
+            <armorPenetrationSharp>18</armorPenetrationSharp>
+            <armorPenetrationBlunt>634</armorPenetrationBlunt>
+            <pelletCount>2</pelletCount>
+            <spreadMult>6</spreadMult>
+            <secondaryDamage>
+                <li>
+                    <def>Bomb_Secondary</def>
+                    <amount>32</amount>
+                </li>
+            </secondaryDamage>
+        </projectile>
+    </ThingDef>
+    
+    <ThingDef ParentName="Base145x114mmBullet">
+        <defName>Bullet_145x114mm_Sabot_Double</defName>
+        <label>14.5x114mm bullet (Sabot)</label>
+        <projectile Class="CombatExtended.ProjectilePropertiesCE">
+            <speed>300</speed>
+            <damageAmountBase>27</damageAmountBase>
+            <armorPenetrationSharp>63</armorPenetrationSharp>
+            <armorPenetrationBlunt>820.360</armorPenetrationBlunt>
+            <pelletCount>2</pelletCount>
+            <spreadMult>6</spreadMult>
+        </projectile>
+    </ThingDef>
+
+</Defs>

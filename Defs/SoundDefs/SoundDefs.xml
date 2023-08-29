@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+    <SoundDef>
+        <defName>ZPU_Fire</defName>  
+        <context>MapOnly</context>
+        <priorityMode>PrioritizeNewest</priorityMode>
+        <maxVoices>8</maxVoices>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipPath>ZPU/Shot</clipPath>
+                    </li>
+                </grains>   
+                <sustainLoop>False</sustainLoop>
+                <volumeRange>190~200</volumeRange>
+                <pitchRange>0.90~1.00</pitchRange>
+            </li>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipPath>ZPU/Tail</clipPath>
+                    </li>
+                </grains>   
+                <sustainLoop>False</sustainLoop>
+                <volumeRange>40~40</volumeRange>
+                <pitchRange>1.00~1.00</pitchRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>ZPU_Tail</defName>  
+        <context>MapOnly</context>
+        <priorityMode>PrioritizeNearest</priorityMode>
+        <maxVoices>8</maxVoices>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <onCamera>True</onCamera>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipPath>ZPU/Tail</clipPath>
+                    </li>
+                </grains>   
+                <sustainLoop>False</sustainLoop>
+                <volumeRange>20~25</volumeRange>
+                <pitchRange>1.00~1.00</pitchRange>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+    <SoundDef>
+        <defName>ZPU_Reload</defName>  
+        <context>MapOnly</context>
+        <priorityMode>PrioritizeNearest</priorityMode>
+        <maxVoices>8</maxVoices>
+        <maxSimultaneous>1</maxSimultaneous>
+        <subSounds>
+            <li>
+                <grains>
+                    <li Class="AudioGrain_Folder">
+                        <clipPath>ZPU/Reload</clipPath>
+                    </li>
+                </grains>   
+                <sustainLoop>False</sustainLoop>
+            </li>
+        </subSounds>
+    </SoundDef>
+
+</Defs>

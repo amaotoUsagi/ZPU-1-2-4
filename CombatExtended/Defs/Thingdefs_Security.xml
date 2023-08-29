@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+<!-- ZPU-1 -->
+  <ThingDef ParentName="TurretMannedBuildableBase" Name="ZPUBase">
+    <defName>Turret_ZPU_1_Base</defName>
+    <label>ZPU-1</label>
+    <description>The ZPU is a family of towed anti-aircraft guns based on the Soviet 14.5x114mm KPV heavy machine gun. The single-barrel ZPU-1 is carried on a two-wheeled carriage and can be broken down into several 80-kilogram pieces for transport over rough ground.</description>
+    <uiIconPath>Things/Building/ZPU/ZPU_1_Icon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/ZPU/ZPU_1_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2, 2)</drawSize>
+    </graphicData>
+    <statBases>
+      <WorkToBuild>22400</WorkToBuild>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <Mass>413</Mass>
+      <Bulk>100</Bulk>
+    </statBases>
+    <costList>
+      <Steel>300</Steel>
+      <ComponentIndustrial>9</ComponentIndustrial>
+    </costList>
+    <size>(1,1)</size>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <rotatable>true</rotatable>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_ZPU_1_Turret</turretGunDef>
+      <turretTopDrawSize>3.45</turretTopDrawSize>
+      <turretBurstCooldownTime>0.35</turretBurstCooldownTime>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_TurretTop</li>
+      <li>PlaceWorker_ShowTurretRadius</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>CE_TurretHeavyWeapons</li>
+    </researchPrerequisites>
+    <minifiedDef>MinifiedThing</minifiedDef>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseTurretGun">
+    <defName>Gun_ZPU_1_Turret</defName>
+    <label>ZPU-1 turret</label>
+    <graphicData>
+      <texPath>Things/Building/ZPU/ZPU_1_Turret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <description>An heavy machinegun firing 14.5x114mm ammunition, effective against infantry and lightly armored vehicles.</description>
+    <statBases>
+      <SightsEfficiency>1.1</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.42</SwayFactor>
+      <RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
+      <Mass>950</Mass>
+    </statBases>
+    <soundInteract>ZPU_Reload</soundInteract>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.30</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_145x114mm_FMJ</defaultProjectile>
+        <warmupTime>1.26</warmupTime>
+        <range>75</range>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>10</burstShotCount>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <soundCast>ZPU_Fire</soundCast>
+        <soundCastTail>ZPU_Tail</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <recoilPattern>Mounted</recoilPattern>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>150</magazineSize>
+        <reloadTime>9.8</reloadTime>
+        <ammoSet>AmmoSet_145x114mm</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>SuppressFire</aiAimMode>
+        <aimedBurstShotCount>5</aimedBurstShotCount>
+        <noSingleShot>true</noSingleShot>
+      </li>
+    </comps>
+  </ThingDef>
+
+<!-- ZPU-2 -->
+  <ThingDef ParentName="ZPUBase">
+    <defName>Turret_ZPU_2_Base</defName>
+    <label>ZPU-2</label>
+    <description>The ZPU is a family of towed anti-aircraft guns based on the Soviet 14.5x114mm KPV heavy machine gun. The double-barrel ZPU-2 has wheels that fold and are raised from the ground in the firing position.</description>
+    <uiIconPath>Things/Building/ZPU/ZPU_2_Icon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/ZPU/ZPU_2_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4.3, 4.3)</drawSize> <!--x2.15-->
+    </graphicData>
+    <statBases>
+      <WorkToBuild>32150</WorkToBuild>
+      <MaxHitPoints>900</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <Mass>639</Mass>
+      <Bulk>200</Bulk>
+    </statBases>
+    <costList>
+      <Steel>400</Steel>
+      <ComponentIndustrial>16</ComponentIndustrial>
+    </costList>
+    <size>(2,2)</size>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <rotatable>true</rotatable>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_ZPU_2_Turret</turretGunDef>
+      <turretTopDrawSize>4.26</turretTopDrawSize>
+      <turretBurstCooldownTime>0.35</turretBurstCooldownTime>
+    </building>
+    <minifiedDef>MinifiedThing</minifiedDef>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseTurretGun">
+    <defName>Gun_ZPU_2_Turret</defName>
+    <label>ZPU-2 turret</label>
+    <graphicData>
+      <texPath>Things/Building/ZPU/ZPU_2_Turret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <description>An heavy machinegun firing 14.5x114mm ammunition, effective against infantry and lightly armored vehicles.</description>
+    <statBases>
+      <SightsEfficiency>1.1</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.42</SwayFactor>
+      <RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
+      <Mass>639</Mass>
+    </statBases>
+    <soundInteract>ZPU_Reload</soundInteract>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.17</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_145x114mm_FMJ</defaultProjectile>
+        <warmupTime>1.26</warmupTime>
+        <range>75</range>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <burstShotCount>20</burstShotCount>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <soundCast>ZPU_Fire</soundCast>
+        <soundCastTail>ZPU_Tail</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <recoilPattern>Mounted</recoilPattern>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>300</magazineSize>
+        <reloadTime>11.7</reloadTime>
+        <ammoSet>AmmoSet_145x114mm</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>SuppressFire</aiAimMode>
+        <aimedBurstShotCount>10</aimedBurstShotCount>
+        <noSingleShot>true</noSingleShot>
+      </li>
+    </comps>
+  </ThingDef>
+
+<!-- ZPU-4 -->
+  <ThingDef ParentName="ZPUBase">
+    <defName>Turret_ZPU_4_Base</defName>
+    <label>ZPU-4</label>
+    <description>The ZPU is a family of towed anti-aircraft guns based on the Soviet 14.5x114mm KPV heavy machine gun. The double-barrel ZPU-2 has wheels that fold and are raised from the ground in the firing position.</description>
+    <uiIconPath>Things/Building/ZPU/ZPU_4_Icon</uiIconPath>
+    <graphicData>
+      <texPath>Things/Building/ZPU/ZPU_4_Base</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3.76, 3.76)</drawSize> <!--1.88-->
+    </graphicData>
+    <statBases>
+      <WorkToBuild>82200</WorkToBuild>
+      <MaxHitPoints>900</MaxHitPoints>
+      <Flammability>0.4</Flammability>
+      <Mass>1810</Mass>
+      <Bulk>400</Bulk>
+    </statBases>
+    <costList>
+      <Steel>600</Steel>
+      <ComponentIndustrial>30</ComponentIndustrial>
+    </costList>
+    <size>(2,3)</size>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <rotatable>true</rotatable>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>Gun_ZPU_4_Turret</turretGunDef>
+      <turretTopDrawSize>3.6</turretTopDrawSize>
+      <turretBurstCooldownTime>0.35</turretBurstCooldownTime>
+    </building>
+    <minifiedDef>MinifiedThing</minifiedDef>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseTurretGun">
+    <defName>Gun_ZPU_4_Turret</defName>
+    <label>ZPU-4 turret</label>
+    <graphicData>
+      <texPath>Things/Building/ZPU/ZPU_4_Turret</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <description>An heavy machinegun firing 14.5x114mm ammunition, effective against infantry and lightly armored vehicles.</description>
+    <statBases>
+      <SightsEfficiency>1.1</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.42</SwayFactor>
+      <RangedWeapon_Cooldown>0.35</RangedWeapon_Cooldown>
+      <Mass>1810</Mass>
+    </statBases>
+    <soundInteract>ZPU_Reload</soundInteract>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.07</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_145x114mm_FMJ_Double</defaultProjectile>
+        <warmupTime>1.26</warmupTime>
+        <range>75</range>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <burstShotCount>20</burstShotCount>
+        <stopBurstWithoutLos>false</stopBurstWithoutLos>
+        <soundCast>ZPU_Fire</soundCast>
+        <soundCastTail>ZPU_Tail</soundCastTail>
+        <muzzleFlashScale>12</muzzleFlashScale>
+        <recoilPattern>Mounted</recoilPattern>
+        <ammoConsumedPerShotCount>2</ammoConsumedPerShotCount>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>600</magazineSize>
+        <reloadTime>13.65</reloadTime>
+        <ammoSet>AmmoSet_145x114mm_Double</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>SuppressFire</aiAimMode>
+        <aimedBurstShotCount>10</aimedBurstShotCount>
+        <noSingleShot>true</noSingleShot>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

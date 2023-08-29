@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>ZPU-1/2/4</name>
+  <author>amaoto</author>
+  <url>null</url>
+  <supportedVersions>
+	  <li>1.4</li>
+  </supportedVersions>
+  <packageId>amaoto.ZPU</packageId>
+  <description>[h1]Combat Extended only[/h1]
+Adds ZPU-1, ZPU-2 and ZPU-4. Supports Muzzle Flash. CE Only
+
+If you like my mods consider buying me a kofi
+[url=https://ko-fi.com/amaoto] [img]https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/61e11ddcc39341db4958c5cc_Supportbutton.png[/img][/url]
+[h1]Combat Extended only[/h1]
+    </description>
+  <modDependencies>
+        <li>
+            <packageId>CETeam.CombatExtended</packageId>
+            <displayName>Combat Extended</displayName>
+            <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2890901044</steamWorkshopUrl>
+        </li>
+  </modDependencies>
+  <loadBefore>
+  </loadBefore>
+  <loadAfter>
+    <li>CETeam.CombatExtended</li>
+  </loadAfter>
+</ModMetaData>
